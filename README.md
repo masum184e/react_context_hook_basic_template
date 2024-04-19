@@ -21,7 +21,7 @@ npm run dev
 
 ## Explaination
 
-<p> We bassically need 5 different component:</p>
+<p> We bassically need 3 different component:</p>
 
 1. **wrapper:**
 
@@ -67,3 +67,60 @@ npm run dev
     }
 
     export default Provider
+
+3. **consumer:**
+
+    Consumer component demonstrates how to consume the context created by `Provider` using the custom hook `useMyContext`.  You can easily access the context state and update functions provided by `Provider`. This separation of concerns allows you to keep your components clean and focused, while still having access to shared state managed by the context provider.
+
+    ```jsx
+    import { useContext } from "react"
+    import { ImplementContext } from "../provider/Provider"
+
+    const Child = () => {
+    const { setCount, setName } = useContext(ImplementContext)
+    return (
+        <>
+        <div>
+            <h5>I&apos;m from Child</h5>
+        </div>
+        <div style={{ display: "flex", gap: "10px" }}>
+            <button
+            aria-label="Increment value"
+            onClick={() => setCount(prev => prev = prev + 1)}
+            >
+            Increment
+            </button>
+            <button
+            aria-label="Decrement value"
+            onClick={() => setCount(prev => prev = prev - 1)}
+            >
+            Decrement
+            </button>
+        </div>
+        <div style={{ marginTop: "5px" }}>
+            <input type="text" name="" id="" onChange={(event) => setName(event.target.value)} />
+        </div>
+        </>
+    )
+    }
+
+    export default Child
+    ```
+    
+    ```jsx
+    import { useContext } from "react"
+    import SuperParent from "./SuperParent"
+    import { ImplementContext } from "../provider/Provider"
+
+    const App = () => {
+    const { count, name } = useContext(ImplementContext)
+    return (
+        <>
+        <h1 style={{ textAlign: "center" }}>Hello React Context</h1>
+        <h2>I&apos;m from App, my name {name} & value {count}</h2>
+        <SuperParent />
+        </>
+    )
+    }
+
+    export default App
