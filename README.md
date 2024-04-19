@@ -124,3 +124,27 @@ npm run dev
     }
 
     export default App
+
+## Structure
+
+```
+├─ provider
+│  ├─ Provider.jsx
+│
+├─ src
+│  ├─ App.jsx
+│  ├─ Child.jsx
+│  ├─ Parent.jsx
+│  ├─ SuperParent.jsx
+│  └─ main.jsx
+│
+├─ .eslintrc.cjs
+├─ .gitignore
+├─ README.md
+├─ index.html
+├─ package-lock.json
+├─ package.json
+├─ preview.png
+├─ vercel.json
+└─ vite.config.js
+```
