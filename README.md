@@ -1,6 +1,6 @@
 ## React Context Hook Basic Template
 
-<p textAlign="justify">Context provides a way to pass data through the component tree without having to pass props down manually at every level. </p>
+<p textAlign="justify">Context hook provides a way to pass data through the component tree without having to pass props down manually at every level. </p>
 
 ## Preview
 <img src="https://github.com/masum184e/react_context_hook_basic_template/blob/main/preview.png" >
@@ -35,9 +35,9 @@ npm run dev
 
     ReactDOM.createRoot(document.getElementById('root')).render(
     <React.StrictMode>
-        <Provider>
+      <Provider>
         <App />
-        </Provider>
+      </Provider>
     </React.StrictMode>,
     )
 
@@ -128,23 +128,31 @@ npm run dev
 ## Structure
 
 ```
+├─ public
+│  └─ images                  - store images
+│
 ├─ provider
-│  ├─ Provider.jsx
+│  └─ Provider.jsx            - sets up a React context using the Context API, providing a way to manage and share state 
 │
 ├─ src
-│  ├─ App.jsx
-│  ├─ Child.jsx
-│  ├─ Parent.jsx
-│  ├─ SuperParent.jsx
-│  └─ main.jsx
+│  ├─ App.jsx                 - main application component that typically includes routing and other high-level logic and display state value
+│  ├─ Child.jsx               - component that where state will change
+│  ├─ Parent.jsx              - component that help to increase tree size
+│  ├─ SuperParent.jsx         - component that help to increase tree size
+│  └─ main.jsx                - entry point file where the React application is rendered and the Redux provider is set up.
 │
-├─ .eslintrc.cjs
-├─ .gitignore
-├─ README.md
-├─ index.html
-├─ package-lock.json
-├─ package.json
-├─ preview.png
-├─ vercel.json
-└─ vite.config.js
+├─ .eslintrc.cjs              - configuration for eslint
+├─ .gitignore                 - store details about ingnored file by git
+├─ README.md                  - serve a details documentation
+├─ index.html                 - main HTML file for the application. It typically includes a <div id="root"></div> where your React app will be mounted. Vite injects the necessary scripts into this file.
+├─ package-lock.json          - contains metadata about dependencies, scripts, and other configurations
+├─ package.json               - contains metadata about dependencies, scripts, and other configurations.
+├─ preview.png                - preview image
+├─ vercel.json                - configuration for vercel
+└─ vite.config.js             - configuration for vite
 ```
+
+## Features
+__Update Counter:__ It allows the user to increase/decrease the counter value by 1 as well as increase the counter value by a specific amount. It is typically used to track and display incremental changes.
+
+__Decrement Counter:__ It lets the user update the name value to a new string. It's useful for scenarios where dynamic updates to a displayed name are required.
