@@ -21,6 +21,12 @@ const Child = () => {
         >
           Decrement
         </button>
+        <button
+          aria-label="Increment value"
+          onClick={() => setCount(prev => prev = prev + 5)}
+        >
+          Increment By Amount
+        </button>
       </div>
       <div style={{ marginTop: "5px" }}>
         <input type="text" name="" id="" onChange={(event) => setName(event.target.value)} />
