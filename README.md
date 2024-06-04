@@ -125,8 +125,12 @@ npm run dev
 
     export default App
 
-## Structure
+## Features
+__Update Counter:__ It allows the user to increase/decrease the counter value by 1 as well as increase the counter value by a specific amount. It is typically used to track and display incremental changes.
 
+__Decrement Counter:__ It lets the user update the name value to a new string. It's useful for scenarios where dynamic updates to a displayed name are required.
+
+## Structure
 ```
 ├─ public
 │  └─ images                  - store images
@@ -151,8 +155,3 @@ npm run dev
 ├─ vercel.json                - configuration for vercel
 └─ vite.config.js             - configuration for vite
 ```
-
-## Features
-__Update Counter:__ It allows the user to increase/decrease the counter value by 1 as well as increase the counter value by a specific amount. It is typically used to track and display incremental changes.
-
-__Decrement Counter:__ It lets the user update the name value to a new string. It's useful for scenarios where dynamic updates to a displayed name are required.
