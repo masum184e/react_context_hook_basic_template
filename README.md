@@ -70,16 +70,16 @@ npm run dev
 
 3. **consumer:**
 
-    Consumer component demonstrates how to consume the context created by `Provider` using the custom hook `useMyContext`.  You can easily access the context state and update functions provided by `Provider`. This separation of concerns allows you to keep your components clean and focused, while still having access to shared state managed by the context provider.
+    Consumer component demonstrates how to consume the context created by `Provider` using the custom hook `useContext`.  You can easily access the context state and update functions provided by `Provider`. This separation of concerns allows you to keep your components clean and focused, while still having access to shared state managed by the context provider.
 
-    ```jsx
+```jsx
     import { useContext } from "react"
     import { ImplementContext } from "../provider/Provider"
 
     const Child = () => {
     const { setCount, setName } = useContext(ImplementContext)
     return (
-        <>
+      <>
         <div>
             <h5>I&apos;m from Child</h5>
         </div>
@@ -100,14 +100,12 @@ npm run dev
         <div style={{ marginTop: "5px" }}>
             <input type="text" name="" id="" onChange={(event) => setName(event.target.value)} />
         </div>
-        </>
-    )
+      </>
+     )
     }
-
     export default Child
-    ```
-    
-    ```jsx
+``` 
+```jsx
     import { useContext } from "react"
     import SuperParent from "./SuperParent"
     import { ImplementContext } from "../provider/Provider"
@@ -115,15 +113,15 @@ npm run dev
     const App = () => {
     const { count, name } = useContext(ImplementContext)
     return (
-        <>
+      <>
         <h1 style={{ textAlign: "center" }}>Hello React Context</h1>
         <h2>I&apos;m from App, my name {name} & value {count}</h2>
         <SuperParent />
-        </>
-    )
+      </>
+     )
     }
-
     export default App
+```
 
 ## Features
 __Update Counter:__ It allows the user to increase/decrease the counter value by 1 as well as increase the counter value by a specific amount. It is typically used to track and display incremental changes.
@@ -136,7 +134,7 @@ __Decrement Counter:__ It lets the user update the name value to a new string. I
 │  └─ images                  - store images
 │
 ├─ provider
-│  └─ Provider.jsx            - sets up a React context using the Context API, providing a way to manage and share state 
+│  └─ Provider.jsx            - sets up a React context using the Context hook, providing a way to manage and share state 
 │
 ├─ src
 │  ├─ App.jsx                 - main application component that typically includes routing and other high-level logic and display state value
